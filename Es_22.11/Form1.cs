@@ -24,12 +24,12 @@ namespace Es_22._11
             if (d1 > d2)
             {
                 TimeSpan differenza = d1 - d2;
-                lbl_DIFF.Text = "La differenza delle due date è di " + differenza.Days + " giorni";
+                textBox2.Text = differenza.Days + " giorni";
             }
             else
             {
                 TimeSpan differenza = d2 - d1;
-                lbl_DIFF.Text = "La differenza delle due date è di " + differenza.Days + " giorni";
+                textBox2.Text = differenza.Days + " giorni";
             }
         }
 
@@ -42,7 +42,7 @@ namespace Es_22._11
             }
             DateTime.TryParse(dateTimePicker1.Text, out DateTime d1);
             //la funzione per stampare solo la data presa su ChatGPT
-            lbl_RISULTATO.Text = "La somma dei giorni della data ha dato come risultato la data " + d1.AddDays(giorni).ToString("dd/MM/yyyy"); 
+            textBox3.Text = d1.AddDays(giorni).ToString("dd/MM/yyyy"); 
         }
 
         private void button_rm_Click(object sender, EventArgs e)
@@ -53,7 +53,11 @@ namespace Es_22._11
                 return;
             }
             DateTime.TryParse(dateTimePicker1.Text, out DateTime d1);
-            lbl_RISULTATO.Text = "La sottrazione dei giorni della data ha dato come risultato la data " + d1.AddDays(-giorni).ToString("dd/MM/yyyy"); 
+            textBox3.Text = d1.AddDays(-giorni).ToString("dd/MM/yyyy"); 
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
         }
     }
 }
